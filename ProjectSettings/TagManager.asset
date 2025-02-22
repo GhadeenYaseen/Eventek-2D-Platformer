@@ -7,6 +7,7 @@ TagManager:
   - ground
   - Coin
   - Sharp
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,9 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Back ground
+    uniqueID: 1635770761
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: New Layer 1
-    uniqueID: 1635770761
     locked: 0

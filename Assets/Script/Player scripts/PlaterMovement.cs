@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlaterMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb2d; //ref to gameobject's rigid body
-    public GameObject panel;
+    public GameObject gameOverScreen, winScreen;
    
     public TextMeshProUGUI coinCounterText;     //ref to textmesh pro ui
 
@@ -25,6 +25,7 @@ public class PlaterMovement : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale =1;
         _currentIndex = healthIcons.Count - 1;
     }
 
@@ -90,8 +91,9 @@ public class PlaterMovement : MonoBehaviour
         }
         else
         {
-            panel.SetActive(true);
+            gameOverScreen.SetActive(true);
             Debug.Log("game over me3alem :()");
+            Time.timeScale =0;
         }
     }
 
@@ -114,6 +116,13 @@ public class PlaterMovement : MonoBehaviour
             UICoinUpdater();
 
             //Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("level finished!");
+            winScreen.SetActive(true);
+            Time.timeScale =0;
         }
     }
 
