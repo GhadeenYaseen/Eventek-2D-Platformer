@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlaterMovement : MonoBehaviour
 {
@@ -128,10 +127,5 @@ public class PlaterMovement : MonoBehaviour
         {
             coinCounterText.text = "Coin Counter: " + _coinAmount.ToString();
         }
-    }
-
-    public void ReplayLevel()
-    {
-        SceneManager.LoadScene(0);
     }
 }
