@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Sharp
   - Door
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -15,12 +15,12 @@ public class PlaterMovement : MonoBehaviour
     private int _coinAmount = 0;    //coin amount
     private int _currentIndex;      
 
-    private float _horizontalDir; //get horizontal input
+    public float _horizontalDir; //get horizontal input
 
     public float speed = 12f;   //horizontal pseed
     public float jumpPower = 10f; //jump force
 
-    private bool isFacingRight = true;  //horizontal flipping boolean
+    public bool isFacingRight = true;  //horizontal flipping boolean
     private bool _jumpingState;     //ground check boolean
 
     void Start()
@@ -32,7 +32,7 @@ public class PlaterMovement : MonoBehaviour
     //update method is called once every frame
     private void Update() 
     {
-        Debug.Log("update method"); //output statement
+        //Debug.Log("update method"); //output statement
 
         _horizontalDir = Input.GetAxisRaw("Horizontal");    //get horizontal input from left & right arrows
         Flip();     //horizontal flip
@@ -123,6 +123,12 @@ public class PlaterMovement : MonoBehaviour
             Debug.Log("level finished!");
             winScreen.SetActive(true);
             Time.timeScale =0;
+        }
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("collided w sharp"); //bug: is printed two times per collission 
+            HealthIconHandler();
         }
     }
 
